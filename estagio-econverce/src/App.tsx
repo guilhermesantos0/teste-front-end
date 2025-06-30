@@ -4,6 +4,8 @@ import style from './App.module.scss';
 // COMPONENTES
 import Category from './components/Category';
 import Showcase from './components/Showcase';
+import Partners from './components/Partners';
+import Footer from './components/Footer';
 
 // IMAGES / HEADER
 import shield from '@assets/images/header/shield.svg';
@@ -122,33 +124,78 @@ function App() {
                         </ul>
                     </nav>
                 </section>
-
-                <main>
-                    <div className={style.Banner}>
-                        <p className={style.Title}>Venha conhecer nossas promoções</p>
-                        <div className={style.SubTitle}>
-                            <p>50% Off</p>
-                            <p>nos produtos</p>
-                        </div>
-                        <button className={style.Button}>Ver produto</button>
-                    </div>
-
-                    <nav className={style.Categories}>
-                        {
-                            categories.map((category) => (
-                                <Category name={category.name} icon={category.icon} />
-                            ))
-                        }
-                    </nav>
-
-                    {
-                        products && ( <Showcase products={products} /> )
-                    }
-
-                </main>
-
-
             </header>
+
+            <main>
+                <div className={style.Banner}>
+                    <p className={style.Title}>Venha conhecer nossas promoções</p>
+                    <div className={style.SubTitle}>
+                        <p>50% Off</p>
+                        <p>nos produtos</p>
+                    </div>
+                    <button className={style.Button}>Ver produto</button>
+                </div>
+
+                <nav className={style.Categories}>
+                    {
+                        categories.map((category) => (
+                            <Category name={category.name} icon={category.icon} />
+                        ))
+                    }
+                </nav>
+
+                {
+                    products && ( <Showcase products={products} showCategories /> )
+                }
+
+                <Partners />
+
+                {
+                    products && ( <Showcase products={products} /> )
+                }
+
+                <Partners />
+
+                {
+                    products && ( <Showcase products={products} /> )
+                }
+
+                <section className={style.BrandsSection}>
+                    <p className={style.Title}>Navegue por marcas</p>
+                    <ul className={style.Brands}>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
+                    </ul>
+                </section>
+
+                {
+                    products && ( <Showcase products={products} /> )
+                }
+
+            </main>
+
+            <section className={style.Newsletter}>
+                <div className={style.NewsletterText}>
+                    <p className={style.Title}>Inscreva-se</p>
+                    <p className={style.Subtitle}>Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse.</p>
+                </div>
+                <form action="subscribe">
+                    <div className={style.FormInputs}>
+                        <input type="text" className={style.Input} placeholder='Digite seu nome' />
+                        <input type="email" className={style.Input} placeholder='Digite seu e-mail' />
+                        <button type="submit" className={style.Button}>Inscrever</button>
+                    </div>
+                    <div className={style.FormTerms}>
+                        <input type="checkbox" id="terms" />
+                        <label htmlFor="terms">Aceito os termos e condições</label>
+                    </div>
+                </form>
+            </section>
+
+            <Footer />
 
         </div>    
     )

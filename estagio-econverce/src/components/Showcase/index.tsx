@@ -9,10 +9,10 @@ import chevron_right from '@assets/images/main/chevron_right.svg';
 
 interface Props {
     products: ProductType[],
-    showSeeAll?: boolean
+    showCategories?: boolean
 }
 
-const Showcase: React.FC<Props> = ({ products, showSeeAll }) => {
+const Showcase: React.FC<Props> = ({ products, showCategories }) => {
     const subCategories = [
         'Celular',
         'Acessórios',
@@ -25,16 +25,19 @@ const Showcase: React.FC<Props> = ({ products, showSeeAll }) => {
     return(
         <div className={style.Container}>
             <p className={style.Title}>Produtos Relacionados</p>
-            { showSeeAll && (
-                <p className={style.SubTitle}>Ver todos</p>
-            ) }
-            <nav className={style.NavMenu}>
-                {
-                    subCategories.map((subCategory) => (
-                        <a href="#">{subCategory}</a>
-                    ))
-                }
-            </nav>
+            {
+                showCategories ? (
+                    <nav className={style.NavMenu}>
+                        {
+                            subCategories.map((subCategory) => (
+                                <a href="#">{subCategory}</a>
+                            ))
+                        }
+                    </nav>
+                ) : (
+                    <p className={style.SubTitle}>Ver todos</p>
+                )
+            }
 
             <div className={style.ProductsArea}>
                 <div className={style.Swipe}>
