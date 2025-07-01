@@ -1,0 +1,31 @@
+.Container {
+    width: 128px;
+    height: 171px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    .IconContainer {
+        width: 128px;
+        height: 128px;
+
+        padding: 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #fff;
+        border-radius: 10px;
+
+        box-shadow: 0 2px 9px rgba(0, 0, 0, 0.22);
+    }
+
+    .Name {
+        text-align: center;
+        font-size: 14px;
+        color: #4E4E4E;
+    }
+}

@@ -7,12 +7,19 @@ import Product from './Product';
 import chevron_left from '@assets/images/main/chevron_left.svg';
 import chevron_right from '@assets/images/main/chevron_right.svg';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+import { Navigation } from 'swiper/modules';
+
 interface Props {
     products: ProductType[],
-    showCategories?: boolean
+    showCategories?: boolean,
+    className?: string
 }
 
-const Showcase: React.FC<Props> = ({ products, showCategories }) => {
+const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
     const subCategories = [
         'Celular',
         'Acessórios',
@@ -23,14 +30,18 @@ const Showcase: React.FC<Props> = ({ products, showCategories }) => {
     ]
 
     return(
-        <div className={style.Container}>
-            <p className={style.Title}>Produtos Relacionados</p>
+        <div className={`${style.Container} ${className}`}>
+            <div className={style.Top}>
+                <span className={style.Line}></span>
+                <p className={style.Title}>Produtos Relacionados</p>
+                <span className={style.Line}></span>
+            </div>
             {
                 showCategories ? (
                     <nav className={style.NavMenu}>
                         {
                             subCategories.map((subCategory) => (
-                                <a href="#">{subCategory}</a>
+                                <a href="#" className={style.SubCategory}>{subCategory}</a>
                             ))
                         }
                     </nav>
@@ -43,11 +54,27 @@ const Showcase: React.FC<Props> = ({ products, showCategories }) => {
                 <div className={style.Swipe}>
                     <img src={chevron_left} alt="<" />
                 </div>
-                {
-                    products.map((product, index) => (
-                        <Product product={product} key={index} />
-                    ))
-                }
+                <div style={{ width: '1270px', height: '500px' }}>
+                    <Swiper
+                        modules={[Navigation]}
+                        spaceBetween={18}
+                        slidesPerView={4}
+                        navigation={{
+                            nextEl: `${style.SwipeRight}`,
+                            prevEl: `${style.SwipeLeft}`
+                        }}
+                        className="mySwiper"
+                    >
+                        {products.map((product, index) => (
+                            <SwiperSlide
+                                key={index}
+                                style={{ width: '304px', height: '500px' }} // ajuste conforme o tamanho do seu card
+                            >
+                                <Product product={product} />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
                 <div className={style.Swipe}>
                     <img src={chevron_right} alt=">" />
                 </div>

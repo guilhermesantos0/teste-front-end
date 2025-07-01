@@ -8,12 +8,12 @@ interface Props {
 
 const Product: React.FC<Props> = ({ product }) => {
 
-    // ATENÇÃO: ASSUMINDO QUE OS PREÇOS ESTÃO EM REAIS
+    // ATENÇÃO: ASSUMINDO QUE OS PREÇOS ESTÃO COM 1 CASA DECIMAL
     const formatPrice = (price: number) => {
         return new Intl.NumberFormat('pt-BR', {
             style: 'currency',
             currency: 'BRL'
-        }).format(price);
+        }).format(price / 10);
     };
 
     return (
@@ -21,11 +21,15 @@ const Product: React.FC<Props> = ({ product }) => {
             <div className={style.ImageContainer}>
                 <img src={product.photo} alt={product.productName} />
             </div>
-            <p className={style.ProductName}>{product.productName}</p>
-            <s className={style.OldPrice}>{formatPrice(product.price)}</s>
-            <p className={style.Price}>{formatPrice(product.price)}</p>
-            <p>ou 2x de {formatPrice(product.price / 2)} sem juros</p>
-            <p>Frete grátis</p>
+            <div className={style.ProductInfoArea}>
+                <p className={style.Title}>{product.productName}</p>
+                <div className={style.PriceArea}>
+                    <s className={style.OldPrice}>{formatPrice(product.price)}</s>
+                    <p className={style.Price}>{formatPrice(product.price)}</p>
+                </div>
+                <p className={style.Installments}>ou 2x de {formatPrice(product.price / 2)} sem juros</p>
+                <p className={style.Freight}>Frete grátis</p>
+            </div>
             <button className={style.Button}>Comprar</button>
         </div>
     )

@@ -84,7 +84,7 @@ function App() {
             <header className={style.Header}>
                 <section className={style.TopSection}>
                     <div className={style.TopSeciontText}>
-                        <img src={shield} alt="Shield" />
+                        <img src={shield} alt="Shield" width={20} height={20} />
                         <span className={style.InfoText}>Compra <span className={style.InfoHighlight}>100% segura</span></span>
                     </div>
                     <div className={style.TopSeciontText}>
@@ -101,7 +101,7 @@ function App() {
                     <img src="/logo.png" alt="Econverse" />
                     <div className={style.SearchContainer}>
                         <input type="text" placeholder='O que você está buscando?' />
-                        <img src={glass} alt="" />
+                        <img src={glass} alt="Pesquisar" width={28} height={28} />
                     </div>
                     <ul className={style.ActionButtons}>
                         <li><img src={box} alt="Box" /></li>
@@ -126,13 +126,10 @@ function App() {
                 </section>
             </header>
 
-            <main>
+            <main className={style.Main}>
                 <div className={style.Banner}>
                     <p className={style.Title}>Venha conhecer nossas promoções</p>
-                    <div className={style.SubTitle}>
-                        <p>50% Off</p>
-                        <p>nos produtos</p>
-                    </div>
+                    <p className={style.SubTitle}><span className={style.Highlight}>50% Off</span> nos produtos</p>
                     <button className={style.Button}>Ver produto</button>
                 </div>
 
@@ -145,7 +142,7 @@ function App() {
                 </nav>
 
                 {
-                    products && ( <Showcase products={products} showCategories /> )
+                    products && ( <Showcase products={products} showCategories className={style.FirstShowcase} /> )
                 }
 
                 <Partners />
