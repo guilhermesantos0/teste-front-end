@@ -7,20 +7,24 @@ import linkedin from '@assets/images/footer/linkedin.svg';
 
 const Footer: React.FC = () => {
     return (
-        <footer className={style.Footer}>
-        <div className={style.MainArea}>
-            <div className={style.MainContainer}>
+        <footer className={style.Container}>
+            <div className={style.MainArea}>
                 <div className={style.LeftContent}>
-                    <a href="#" className={style.Logo}>
-                        <img src="/logo.png" alt="Econverse" />
-                    </a>
-                    <p className={style.Text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <div className={style.TopContent}>
+                        <a href="#" className={style.Logo}>
+                            <img src="/logo.png" alt="Econverse" />
+                        </a>
+                        <p className={style.Text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
                     <div className={style.SocialMedia}>
                         <a href="#"><img src={instagram} alt="Instagram" /></a>
                         <a href="#"><img src={facebook} alt="Facebook" /></a>
                         <a href="#"><img src={linkedin} alt="LinkedIn" /></a>
                     </div>
                 </div>
+
+                <span className={style.Line}></span>
+
                 <nav className={style.Navigation}>
                     <div className={style.Column}>
                         <h3 className={style.Title}>Institucional</h3>
@@ -48,10 +52,9 @@ const Footer: React.FC = () => {
                     </div>
                 </nav>
             </div>
-        </div>
-        <div className={style.Credits}>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+            <div className={style.Credits}>
+                <p className={style.Text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
         </footer>
     );
 };

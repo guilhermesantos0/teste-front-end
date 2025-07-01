@@ -201,7 +201,133 @@
         margin-top: 39px;
     }
 
-    .FirstShowcase {
+    .Showcase {
         margin-top: 90px;
+    }
+
+    .BrandsSection {
+        margin-top: 90px;
+        width: 1250px;
+        height: 288px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .Title {
+            color: $blue_2;
+            font-size: 30px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .Brands {
+            display: flex;
+            align-items: center;
+            justify-self: center;
+            gap: 42px;
+
+            .Brand {
+                display: flex;
+                width: 211px;
+                height: 211px;
+                padding: 87px 47px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+                
+                border-radius: 105.5px;
+                background: #fff;
+
+                box-shadow: 0px 7px 20px 0px rgba(0, 0, 0, 0.13);
+            }
+        }
+    }
+}
+
+.Newsletter {
+    width: 1440px;
+    height: 162px;
+
+    margin-top: 90px;
+
+    background: #271C47;
+
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 82px 40px 80px;
+
+    .NewsletterText {
+        width: 515px;
+        height: 82px;
+
+        display: inline-flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+
+        .Title {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 38.4px;
+        }
+
+        .Subtitle {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 18px;
+        }
+    }
+
+    .FormInputs {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+
+        width: 639px;
+        height: 42px;
+
+        .Input {
+            width: 233px;
+            height: 42px;
+            padding: 12px 24px;
+            border-radius: 8px;
+
+            &::placeholder {
+                font-size: 14px;
+                font-weight: 400;
+                color: #676767;
+            }
+        }
+
+        .Button {
+            width: 157px;
+            height: 42px;
+
+            background: #F7CA11;
+            border-radius: 8px;
+            border: 0;
+            outline: none;
+
+            color: 161615;
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 12px;
+        }
+    }
+
+    .FormTerms {
+        margin-top: 8px;
+        width: 226px;
+        height: 21px;
+
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+
+        display: flex;
+        gap: 4px;
     }
 }

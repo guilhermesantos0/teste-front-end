@@ -46,7 +46,7 @@ const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
                         }
                     </nav>
                 ) : (
-                    <p className={style.SubTitle}>Ver todos</p>
+                    <p className={style.Subtitle}>Ver todos</p>
                 )
             }
 

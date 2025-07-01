@@ -141,21 +141,15 @@ function App() {
                     }
                 </nav>
 
-                {
-                    products && ( <Showcase products={products} showCategories className={style.FirstShowcase} /> )
-                }
+                { products && ( <Showcase products={products} showCategories className={style.Showcase} /> ) }
 
                 <Partners />
 
-                {
-                    products && ( <Showcase products={products} /> )
-                }
+                { products && ( <Showcase products={products} className={style.Showcase} /> ) }
 
                 <Partners />
 
-                {
-                    products && ( <Showcase products={products} /> )
-                }
+                { products && ( <Showcase products={products} className={style.Showcase} /> ) }
 
                 <section className={style.BrandsSection}>
                     <p className={style.Title}>Navegue por marcas</p>
@@ -168,9 +162,7 @@ function App() {
                     </ul>
                 </section>
 
-                {
-                    products && ( <Showcase products={products} /> )
-                }
+                { products && ( <Showcase products={products} className={style.Showcase} /> ) }
 
             </main>
 
