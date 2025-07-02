@@ -39,7 +39,8 @@ function App() {
     const categories = [
         {
             name: 'Tecnologia',
-            icon: tech
+            icon: tech,
+            selected: true
         },
         {
             name: 'Supermercado',
@@ -136,7 +137,7 @@ function App() {
                 <nav className={style.Categories}>
                     {
                         categories.map((category) => (
-                            <Category name={category.name} icon={category.icon} />
+                            <Category name={category.name} icon={category.icon} selected={category.selected} />
                         ))
                     }
                 </nav>
