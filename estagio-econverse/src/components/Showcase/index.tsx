@@ -5,8 +5,8 @@ import { ProductType } from '../../types/Product';
 import Product from './Product';
 import Modal from '../Modal';
 
-import chevron_left from '@assets/images/main/chevron_left.svg';
-import chevron_right from '@assets/images/main/chevron_right.svg';
+import Chevron_left from '@assets/images/main/chevron_left.svg?react';
+import Chevron_right from '@assets/images/main/chevron_right.svg?react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -81,8 +81,8 @@ const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
                 }
 
                 <div className={style.ProductsArea}>
-                    <div className={style.Swipe}>
-                        <img src={chevron_left} alt="<" />
+                    <div className={`${style.Swipe} ${style.SwipeLeft}`}>
+                        <Chevron_left />
                     </div>
                     <div style={{ width: '1270px', height: '500px' }}>
                         <Swiper
@@ -98,15 +98,15 @@ const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
                             {products.map((product, index) => (
                                 <SwiperSlide
                                     key={index}
-                                    style={{ width: '304px', height: '500px' }} // ajuste conforme o tamanho do seu card
+                                    style={{ width: '304px', height: '500px' }}
                                 >
                                     <Product product={product} onProductClick={setModalProduct} />
                                 </SwiperSlide>
                             ))}
                         </Swiper>
                     </div>
-                    <div className={style.Swipe}>
-                        <img src={chevron_right} alt=">" />
+                    <div className={`${style.Swipe} ${style.SwipeRight}`}>
+                        <Chevron_right />
                     </div>
                 </div>
             </div>

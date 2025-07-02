@@ -82,38 +82,38 @@ function App() {
     return (
         <div className={style.Container}>
 
-            <header className={style.Header}>
+            <header className={style.Header}  role="header">
                 <section className={style.TopSection}>
                     <div className={style.TopSeciontText}>
-                        <ShieldIcon width={20} height={20} />
+                        <ShieldIcon width={20} height={20} aria-hidden="true" />
                         <span className={style.InfoText}>Compra <span className={style.InfoHighlight}>100% segura</span></span>
                     </div>
                     <div className={style.TopSeciontText}>
-                        <TruckIcon />
+                        <TruckIcon width={20} height={20} aria-hidden="true" />
                         <span className={style.InfoText}><span className={style.InfoHighlight}>Frete gráris</span> acima de R$ 200</span>
                     </div>
                     <div className={style.TopSeciontText}>
-                        <CardIcon />
+                        <CardIcon width={20} height={20} aria-hidden="true" />
                         <span className={style.InfoText}><span className={style.InfoHighlight}>Parcele</span> suas compras</span>
                     </div>
                 </section>
 
                 <section className={style.MiddleSection}>
                     <img src="/logo.png" alt="Econverse" />
-                    <div className={style.SearchContainer}>
-                        <input type="text" placeholder='O que você está buscando?' />
+                    <div className={style.SearchContainer} role="search">
+                        <input type="text" placeholder='O que você está buscando?' aria-label="Campo de busca de produtos" />
                         <GlassIcon width={28} height={28} className={style.Glass} />
                     </div>
-                    <ul className={style.ActionButtons}>
-                        <li><BoxIcon className={style.Icon} /></li>
-                        <li><HeartIcon className={style.Icon} /></li>
-                        <li><UserIcon className={style.Icon} /></li>
-                        <li><CartIcon className={style.Icon} /></li>
+                    <ul className={style.ActionButtons} aria-label="Ações do usuário">
+                        <li aria-label="Meus pedidos"><BoxIcon aria-hidden="true" className={style.Icon} /></li>
+                        <li aria-label="Lista de desejos"><HeartIcon className={style.Icon} aria-hidden="true" /></li>
+                        <li aria-label="Minha conta"><UserIcon className={style.Icon} aria-hidden="true" /></li>
+                        <li aria-label="Carrinho de compras"><CartIcon className={style.Icon} aria-hidden="true" /></li>
                     </ul>
                 </section>
 
                 <section className={style.BottomSection}>
-                    <nav className={style.CategoriesContainer}>
+                    <nav className={style.CategoriesContainer} aria-label="Navegação principal">
                         <ul className={style.Categories}>
                             <li className={style.Category}>Todas as categorias</li>
                             <li className={style.Category}>Supermercado</li>
@@ -121,23 +121,23 @@ function App() {
                             <li className={style.Category}>Moda</li>
                             <li className={style.Category}>Lançamentos</li>
                             <li className={`${style.Category} ${style.Selected}`}>Ofertas do dia</li>
-                            <li className={style.Category}><CrownIcon className={style.CrownIcon} />Assinatura</li>
+                            <li className={style.Category}><CrownIcon className={style.CrownIcon} aria-hidden="true" />Assinatura</li>
                         </ul>
                     </nav>
                 </section>
             </header>
 
-            <main className={style.Main}>
-                <div className={style.Banner}>
+            <main className={style.Main} role="main">
+                <div className={style.Banner} role="banner">
                     <p className={style.Title}>Venha conhecer nossas promoções</p>
                     <p className={style.SubTitle}><span className={style.Highlight}>50% Off</span> nos produtos</p>
                     <button className={style.Button}>Ver produto</button>
                 </div>
 
-                <nav className={style.Categories}>
+                <nav className={style.Categories} role='categories'>
                     {
-                        categories.map((category) => (
-                            <Category name={category.name} icon={category.icon} selected={category.selected} />
+                        categories.map((category, index) => (
+                            <Category key={index} name={category.name} icon={category.icon} selected={category.selected} />
                         ))
                     }
                 </nav>
@@ -152,14 +152,14 @@ function App() {
 
                 { products && ( <Showcase products={products} className={style.Showcase} /> ) }
 
-                <section className={style.BrandsSection}>
-                    <p className={style.Title}>Navegue por marcas</p>
+                <section className={style.BrandsSection} aria-labelledby="brands-title">
+                    <p id='brands-title' className={style.Title}>Navegue por marcas</p>
                     <ul className={style.Brands}>
-                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
-                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
-                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
-                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
-                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" loading="lazy" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" loading="lazy" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" loading="lazy" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" loading="lazy" /></li>
+                        <li className={style.Brand}><img src="/logo.png" alt="Econverse" loading="lazy" /></li>
                     </ul>
                 </section>
 
@@ -167,16 +167,16 @@ function App() {
 
             </main>
 
-            <section className={style.Newsletter}>
+            <section className={style.Newsletter} aria-labelledby="newsletter-title">
                 <div className={style.NewsletterText}>
-                    <p className={style.Title}>Inscreva-se</p>
+                    <p id="newsletter-title" className={style.Title}>Inscreva-se</p>
                     <p className={style.Subtitle}>Assine a nossa newsletter e receba as novidades e conteúdos exclusivos da Econverse.</p>
                 </div>
-                <form action="subscribe">
+                <form action="subscribe" method="post" aria-labelledby="newsletter-title">
                     <div className={style.FormInputs}>
-                        <input type="text" className={style.Input} placeholder='Digite seu nome' />
-                        <input type="email" className={style.Input} placeholder='Digite seu e-mail' />
-                        <button type="submit" className={style.Button}>Inscrever</button>
+                        <input type="text" className={style.Input} placeholder='Digite seu nome' aria-label='Nome Completo' />
+                        <input type="email" className={style.Input} placeholder='Digite seu e-mail' aria-label='Endereço de Email' />
+                        <button type="submit" className={style.Button} aria-label="Inscrever-se na newsletter">Inscrever</button>
                     </div>
                     <div className={style.FormTerms}>
                         <input type="checkbox" id="terms" />

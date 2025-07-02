@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
                 <div className={style.LeftContent}>
                     <div className={style.TopContent}>
                         <a href="#" className={style.Logo}>
-                            <img src="/logo.png" alt="Econverse" />
+                            <img src="/logo.png" alt="Econverse" loading="lazy" />
                         </a>
                         <p className={style.Text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>

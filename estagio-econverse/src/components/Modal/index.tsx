@@ -51,7 +51,7 @@ const Modal: React.FC<Props> = ({ product, onClose }) => {
         <div className={style.ModalOverlay} onClick={handleOverlayClick}>
             <div className={style.Modal}>
                 <button className={style.CloseButton} onClick={onClose}>✖</button>
-                <img className={style.Photo} src={product.photo} alt={product.productName} />
+                <img className={style.Photo} src={product.photo} alt={product.productName} loading="lazy" />
                 <div className={style.Infos}>
                     <p className={style.Title}>{product.productName}</p>
                     <p className={style.Price}>{formatPrice(product.price)}</p>

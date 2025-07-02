@@ -8,7 +8,7 @@ interface Props {
 }
 
 const Product: React.FC<Props> = ({ product, onProductClick }) => {
-    
+
     // ATENÇÃO: ASSUMINDO QUE OS PREÇOS ESTÃO COM 1 CASA DECIMAL
     const formatPrice = (price: number) => {
         return new Intl.NumberFormat('pt-BR', {
@@ -21,7 +21,7 @@ const Product: React.FC<Props> = ({ product, onProductClick }) => {
         <>
             <div className={style.Container}>
                 <div className={style.ImageContainer}>
-                    <img className={style.Image} src={product.photo} alt={product.productName} />
+                    <img className={style.Image} src={product.photo} alt={product.productName} loading="lazy" />
                 </div>
                 <div className={style.ProductInfoArea}>
                     <p className={style.Title}>{product.productName}</p>
