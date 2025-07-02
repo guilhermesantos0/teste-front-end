@@ -1,0 +1,85 @@
+@use '@assets/scss/variables' as *;
+
+.Container {
+    width: 304px;
+    height: 500px;
+
+    padding-top: 32px;
+    padding-left: 12.39px;
+    padding-right: 13.51px;
+
+    border-radius: 10px;
+    box-shadow: 0 3px 19px 0 rgba(0, 0, 0, .22);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .ImageContainer {
+        width: 278.104px;
+        height: 228px;
+        flex-shrink: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .ProductInfoArea {
+        width: 100%;
+        margin-top: 9px;
+
+        .Title {
+            color: #3F3F40;
+            font-size: 15px;
+            font-weight: 300;
+            height: 46px;
+        }
+    
+        .PriceArea {
+            height: 56px;
+            .OldPrice {
+                margin-top: 12px;
+                color: #808080;
+                font-size: 16px;
+                font-weight: 400;
+            }
+        
+            .Price {
+                margin-top: 2px;
+                color: #3F3F40;
+                font-size: 20;
+                font-weight: 700;
+            }
+        }
+
+        .Installments {
+            color: #3F3F40;
+            font-size: 12px;
+            font-weight: 400;
+            height: 18px;
+        }
+
+        .Freight {
+            height: 18px;
+            margin-top: 7px;
+            color: $blue_2;
+        }
+    }
+
+    .Button {
+        margin-top: 12px;
+        width: 275.852px;
+        height: 44px;
+        border-radius: 4px;
+        background: var(--Azul, #3442B5);
+
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border: 0;
+        outline: none;
+    }
+
+}

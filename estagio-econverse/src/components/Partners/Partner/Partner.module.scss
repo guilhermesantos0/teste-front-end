@@ -1,0 +1,67 @@
+.Container {
+    position: relative;
+    width: 634px;
+    height: 350px;
+
+    border-radius: 20px;
+
+    background: url('@assets/images/main/auxiliar_banner.png') lightgray 50% / cover no-repeat;
+
+    &::after {
+        position: absolute;
+        content: '';
+        width: 634px;
+        height: 261px;
+
+        bottom: 0;
+        left: 0;
+
+        border-radius: 0px 0px 20px 20px;
+        opacity: 0.8;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 85.04%);
+    }
+
+    .TextArea {
+        position: relative;
+        z-index: 1;
+    }
+
+    .Title {
+        color: #fff;
+        font-size: 40px;
+        font-weight: 700;
+        height: 60px;
+
+        margin-top: 114px;
+        margin-left: 44.18px;
+    }
+
+    .Subtitle {
+        color: #fff;
+        font-size: 16px;
+        font-weight: 400;
+
+        width: 199.92px;
+        height: 48px;
+        line-height: 24px;
+        margin-left: 44.18px;
+    }
+
+    .Button {
+        margin-top: 32px;
+        width: 144.693px;
+        height: 48px;
+        border-radius: 6px;
+        background: #F7CA11;
+
+        color: #271C47;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 1.28px;
+        text-transform: uppercase;
+
+        margin-left: 44.18px;
+
+        border: 0;
+    }
+}

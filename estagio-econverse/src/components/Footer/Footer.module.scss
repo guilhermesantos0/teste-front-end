@@ -1,0 +1,101 @@
+.Container {
+    width: 1440px;
+    height: 282px;
+
+    display: flex;
+    flex-direction: column;
+
+    
+    .MainArea {
+        padding: 42px 80px 42px 80px;
+        display: flex;
+        justify-content: space-between;
+
+        .LeftContent {
+            width: 354px;
+            height: 159px;
+
+            display: flex;
+            flex-direction: column;
+            gap: 27px;
+
+            .TopContent {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                .Text {
+                    color: #3F3F40;
+                    font-size: 14px;
+                    font-weight: 300;
+                }
+            }
+
+            .SocialMedia {
+                display: flex;
+                gap: 26px;
+            }
+
+        }
+
+        .Line {
+            margin: 0 90px;
+
+            width: 1px;
+            height: 198px;
+            background: rgba(40, 40, 40, 0.18);
+        }
+
+        .Navigation {
+            width: 631px;
+            height: 116px;
+            display: flex;
+            gap: 100px;
+
+            .Column {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .Title {
+                    color: rgba(34, 34, 34, 0.71);
+                    font-size: 16px;
+                    font-weight: 700;
+                }
+
+                .Options {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    list-style: none;
+
+                    .Option > a{
+                        color: rgba(34, 34, 34, 0.71);
+                        font-family: "Work Sans";
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 16px; 
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .Credits {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .Text {
+            text-align: center;
+            width: 355px;
+            height: 20px;
+
+            color: #3F3F40;
+            font-size: 13px;
+            font-weight: 300;
+        }
+    }
+}
