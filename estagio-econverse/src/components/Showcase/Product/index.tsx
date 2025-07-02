@@ -1,7 +1,6 @@
 import style from './Product.module.scss';
 
 import { ProductType } from '../../../types/Product';
-import { useState } from 'react';
 
 interface Props {
     product: ProductType,
@@ -9,6 +8,7 @@ interface Props {
 }
 
 const Product: React.FC<Props> = ({ product, onProductClick }) => {
+    
     // ATENÇÃO: ASSUMINDO QUE OS PREÇOS ESTÃO COM 1 CASA DECIMAL
     const formatPrice = (price: number) => {
         return new Intl.NumberFormat('pt-BR', {
@@ -19,9 +19,9 @@ const Product: React.FC<Props> = ({ product, onProductClick }) => {
 
     return (
         <>
-            <div className={style.Container} onClick={() => onProductClick(product)}>
+            <div className={style.Container}>
                 <div className={style.ImageContainer}>
-                    <img src={product.photo} alt={product.productName} />
+                    <img className={style.Image} src={product.photo} alt={product.productName} />
                 </div>
                 <div className={style.ProductInfoArea}>
                     <p className={style.Title}>{product.productName}</p>
@@ -32,7 +32,7 @@ const Product: React.FC<Props> = ({ product, onProductClick }) => {
                     <p className={style.Installments}>ou 2x de {formatPrice(product.price / 2)} sem juros</p>
                     <p className={style.Freight}>Frete grátis</p>
                 </div>
-                <button className={style.Button}>Comprar</button>
+                <button className={style.Button} onClick={() => onProductClick(product)}>Comprar</button>
             </div>
         </>
     )

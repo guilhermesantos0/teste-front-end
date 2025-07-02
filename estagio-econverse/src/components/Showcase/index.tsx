@@ -25,20 +25,26 @@ const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
     const [modalProduct, setModalProduct] = useState<ProductType | null>(null);
 
     const subCategories = [
-        'Celular',
-        'Acessórios',
-        'Tablets',
-        'Notebooks',
-        'Tvs',
-        'Ver todos'
+        {
+            name: 'Celular',
+            selected: true
+        },
+        {
+            name: 'Acessórios'
+        },
+        {
+            name: 'Tablets'
+        },
+        {
+            name: 'Notebooks'
+        },
+        {
+            name: 'Tvs'
+        },
+        {
+            name: 'Ver todos'
+        }
     ]
-
-    const formatPrice = (price: number) => {
-        return new Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL'
-        }).format(price / 10);
-    };
 
     useEffect(() => {
         if (modalProduct) {
@@ -51,13 +57,6 @@ const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
             document.body.style.overflow = 'auto';
         };
     }, [modalProduct]);
-
-    const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
-
-        if(e.target === e.currentTarget) {
-            setModalProduct(null);
-        }
-    }
 
     return(
         <>
@@ -72,7 +71,7 @@ const Showcase: React.FC<Props> = ({ products, showCategories, className }) => {
                         <nav className={style.NavMenu}>
                             {
                                 subCategories.map((subCategory) => (
-                                    <a href="#" className={style.SubCategory}>{subCategory}</a>
+                                    <a href="#" className={`${style.SubCategory} ${subCategory.selected ? style.Selected : ''}`}>{subCategory.name}</a>
                                 ))
                             }
                         </nav>

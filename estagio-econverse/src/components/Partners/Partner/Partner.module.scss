@@ -4,8 +4,21 @@
     height: 350px;
 
     border-radius: 20px;
+    overflow: hidden;
 
-    background: url('@assets/images/main/auxiliar_banner.png') lightgray 50% / cover no-repeat;
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: url('@assets/images/main/auxiliar_banner.png') lightgray 50% / cover no-repeat;
+        border-radius: 20px;
+        transition: transform 0.5s ease;
+        z-index: 0;
+    }
+
+    &:hover::before {
+        transform: scale(1.03);
+    }
 
     &::after {
         position: absolute;
@@ -63,5 +76,11 @@
         margin-left: 44.18px;
 
         border: 0;
+
+        transition: background-color .5s ease-in-out;
+        &:hover {
+            cursor: pointer;
+            background: darken($color: #F7CA11, $amount: 10);
+        }
     }
 }

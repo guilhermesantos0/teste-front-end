@@ -15,6 +15,17 @@
     flex-direction: column;
     align-items: center;
 
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 3px 25px rgba(0, 0, 0, 0.1);
+
+        .Image {
+            transform: scale(1.05);
+        }
+    }
+
     .ImageContainer {
         width: 278.104px;
         height: 228px;
@@ -23,6 +34,10 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .Image {
+            transition: transform 0.5s ease-in-out;
+        }
     }
 
     .ProductInfoArea {
@@ -72,7 +87,7 @@
         width: 275.852px;
         height: 44px;
         border-radius: 4px;
-        background: var(--Azul, #3442B5);
+        background: #3442B5;
 
         color: #fff;
         font-size: 14px;
@@ -80,6 +95,13 @@
         text-transform: uppercase;
         border: 0;
         outline: none;
+
+        transition: background-color .5s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            background: darken($color: #3442B5, $amount: 10);
+        }
     }
 
 }

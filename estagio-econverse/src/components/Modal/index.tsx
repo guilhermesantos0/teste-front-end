@@ -22,7 +22,7 @@ const Modal: React.FC<Props> = ({ product, onClose }) => {
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const raw = e.target.value.replace(/\D/g, ''); // remove tudo que não for número
+        const raw = e.target.value.replace(/\D/g, '');
         const num = parseInt(raw || '1', 10);
         setQuantity(num < 1 ? 1 : num);
     };

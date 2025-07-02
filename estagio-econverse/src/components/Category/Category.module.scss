@@ -23,15 +23,25 @@
         border-radius: 10px;
 
         box-shadow: 0 2px 9px rgba(0, 0, 0, 0.22);
+        
+        transition: box-shadow .5s ease-in-out;
     }
-
+    
     .Name {
         text-align: center;
         font-size: 14px;
         color: #4E4E4E;
     }
-
+    
     &.Selected > .Name {
         color: $blue_1;
+    }
+    
+    &:hover {
+        cursor: pointer;
+        
+        .IconContainer {
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.22);
+        }
     }
 }

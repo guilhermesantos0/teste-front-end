@@ -1,16 +1,17 @@
 import style from './Category.module.scss';
+import React from 'react';
 
 interface CategoryType {
     name: string,
-    icon: string,
+    icon: React.FC<React.SVGProps<SVGSVGElement>>,
     selected?: boolean
 }
 
-const Category: React.FC<CategoryType> = ({ name, icon, selected }) => {
+const Category: React.FC<CategoryType> = ({ name, icon: IconComponent, selected }) => {
     return (
         <div className={`${style.Container} ${selected ? style.Selected : ''}`}>
             <div className={style.IconContainer}>
-                <img src={icon} alt={name} width={61} height={61} />
+                <IconComponent width={61} height={61} />
             </div>
             <p className={style.Name}>{name}</p>
         </div>
@@ -18,3 +19,4 @@ const Category: React.FC<CategoryType> = ({ name, icon, selected }) => {
 }
 
 export default Category
+

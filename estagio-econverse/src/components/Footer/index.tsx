@@ -1,9 +1,9 @@
 import style from './Footer.module.scss';
 
 // IMAGES
-import instagram from '@assets/images/footer/instagram.svg';
-import facebook from '@assets/images/footer/facebook.svg';
-import linkedin from '@assets/images/footer/linkedin.svg';
+import Instagram from '@assets/images/footer/instagram.svg?react';
+import Facebook from '@assets/images/footer/facebook.svg?react';
+import Linkedin from '@assets/images/footer/linkedin.svg?react';
 
 const Footer: React.FC = () => {
     return (
@@ -17,9 +17,9 @@ const Footer: React.FC = () => {
                         <p className={style.Text}>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <div className={style.SocialMedia}>
-                        <a href="#"><img src={instagram} alt="Instagram" /></a>
-                        <a href="#"><img src={facebook} alt="Facebook" /></a>
-                        <a href="#"><img src={linkedin} alt="LinkedIn" /></a>
+                        <Instagram className={style.Icon} />
+                        <Facebook  className={style.Icon} />
+                        <Linkedin className={style.Icon} />
                     </div>
                 </div>
 

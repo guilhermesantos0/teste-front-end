@@ -1,5 +1,3 @@
-/// <reference types="vite-plugin-svgr/client" />
-
 import { useEffect, useState } from 'react';
 import style from './App.module.scss';
 
@@ -9,27 +7,27 @@ import Showcase from './components/Showcase';
 import Partners from './components/Partners';
 import Footer from './components/Footer';
 
-// IMAGES / HEADER
-import ShieldIcon from '@assets/images/header/shield.svg';
-import TruckIcon from '@assets/images/header/truck.svg'
-import CardIcon from '@assets/images/header/card.svg';
-import { ReactComponent as GlassIcon} from '@assets/images/header/glass.svg';
+// IMAGES / HEADER - Importando como componentes React com ?react
+import ShieldIcon from '@assets/images/header/shield.svg?react';
+import TruckIcon from '@assets/images/header/truck.svg?react';
+import CardIcon from '@assets/images/header/card.svg?react';
+import GlassIcon from '@assets/images/header/glass.svg?react';
 
-import BoxIcon from '@assets/images/header/box.svg'
-import heart from '@assets/images/header/heart.svg';
-import user from '@assets/images/header/user.svg';
-import cart from '@assets/images/header/cart.svg';
+import BoxIcon from '@assets/images/header/box.svg?react';
+import HeartIcon from '@assets/images/header/heart.svg?react';
+import UserIcon from '@assets/images/header/user.svg?react';
+import CartIcon from '@assets/images/header/cart.svg?react';
 
-import crown from '@assets/images/header/crown.svg';
+import CrownIcon from '@assets/images/header/crown.svg?react';
 
-// IMAGES / CATEGORIES
-import tech from '@assets/images/main/categories/tech.svg';
-import supermarket from '@assets/images/main/categories/supermarket.svg';
-import beverages from '@assets/images/main/categories/beverages.svg';
-import tools from '@assets/images/main/categories/tools.svg';
-import health from '@assets/images/main/categories/health.svg';
-import sports from '@assets/images/main/categories/sports.svg';
-import fashion from '@assets/images/main/categories/fashion.svg';
+// IMAGES / CATEGORIES - Importando como componentes React com ?react
+import TechIcon from '@assets/images/main/categories/tech.svg?react';
+import SupermarketIcon from '@assets/images/main/categories/supermarket.svg?react';
+import BeveragesIcon from '@assets/images/main/categories/beverages.svg?react';
+import ToolsIcon from '@assets/images/main/categories/tools.svg?react';
+import HealthIcon from '@assets/images/main/categories/health.svg?react';
+import SportsIcon from '@assets/images/main/categories/sports.svg?react';
+import FashionIcon from '@assets/images/main/categories/fashion.svg?react';
 
 // TYPES
 import { ProductType } from './types/Product';
@@ -41,32 +39,32 @@ function App() {
     const categories = [
         {
             name: 'Tecnologia',
-            icon: tech,
+            icon: TechIcon,
             selected: true
         },
         {
             name: 'Supermercado',
-            icon: supermarket
+            icon: SupermarketIcon
         },
         {
             name: 'Bebidas',
-            icon: beverages
+            icon: BeveragesIcon
         },
         {
             name: 'Ferramentas',
-            icon: tools
+            icon: ToolsIcon
         },
         {
             name: 'Saúde',
-            icon: health
+            icon: HealthIcon
         },
         {
             name: 'Esportes e Fitness',
-            icon: sports
+            icon: SportsIcon
         },
         {
             name: 'Moda',
-            icon: fashion
+            icon: FashionIcon
         },
     ]
 
@@ -87,7 +85,7 @@ function App() {
             <header className={style.Header}>
                 <section className={style.TopSection}>
                     <div className={style.TopSeciontText}>
-                        <ShieldIcon />
+                        <ShieldIcon width={20} height={20} />
                         <span className={style.InfoText}>Compra <span className={style.InfoHighlight}>100% segura</span></span>
                     </div>
                     <div className={style.TopSeciontText}>
@@ -104,13 +102,13 @@ function App() {
                     <img src="/logo.png" alt="Econverse" />
                     <div className={style.SearchContainer}>
                         <input type="text" placeholder='O que você está buscando?' />
-                        <GlassIcon />
+                        <GlassIcon width={28} height={28} className={style.Glass} />
                     </div>
                     <ul className={style.ActionButtons}>
-                        <li><BoxIcon /></li>
-                        <li><img src={heart} alt="Heart" /></li>
-                        <li><img src={user} alt="User" /></li>
-                        <li><img src={cart} alt="Cart" /></li>
+                        <li><BoxIcon className={style.Icon} /></li>
+                        <li><HeartIcon className={style.Icon} /></li>
+                        <li><UserIcon className={style.Icon} /></li>
+                        <li><CartIcon className={style.Icon} /></li>
                     </ul>
                 </section>
 
@@ -123,7 +121,7 @@ function App() {
                             <li className={style.Category}>Moda</li>
                             <li className={style.Category}>Lançamentos</li>
                             <li className={`${style.Category} ${style.Selected}`}>Ofertas do dia</li>
-                            <li className={style.Category}><img src={crown} alt="Crown" />Assinatura</li>
+                            <li className={style.Category}><CrownIcon className={style.CrownIcon} />Assinatura</li>
                         </ul>
                     </nav>
                 </section>
@@ -194,3 +192,4 @@ function App() {
 }
 
 export default App
+
